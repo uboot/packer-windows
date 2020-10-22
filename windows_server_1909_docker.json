@@ -16,7 +16,7 @@
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1"
       ],
-      "headless": true,
+      "headless": false,
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_url": "{{user `iso_url`}}",
       "memory": "{{user `memory`}}",
@@ -28,12 +28,16 @@
         ],
         [
           "-drive",
+          "file={{ user `iso_url` }},media=cdrom,index=2"
+        ],
+        [
+          "-drive",
           "file={{ user `virtio_win_iso` }},media=cdrom,index=3"
         ]
       ],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "qemu",
-      "vm_name": "WindowsServer2019Docker",
+      "vm_name": "WindowsServer1909Docker",
       "winrm_password": "vagrant",
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "vagrant"
