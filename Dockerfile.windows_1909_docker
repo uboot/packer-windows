@@ -1,0 +1,2 @@
+FROM scratch
+ADD --chown=107:107 windows_server_1909_docker-qemu/WindowsServer1909Docker /disk/

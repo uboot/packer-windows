@@ -182,7 +182,8 @@
     },
     {
       "scripts": [
-        "./scripts/install-cloudinit.bat"
+        "./scripts/install-python.ps1",
+        "./scripts/install-cloudinit.ps1"
       ],
       "type": "powershell"
     }
