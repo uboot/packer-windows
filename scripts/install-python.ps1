@@ -4,6 +4,6 @@ if (!(Test-Path 'C:\Windows\Temp\python.exe')) {
 }
 
 Write-Output "Installing python"
-C:\Windows\temp\python.exe /quiet InstallAllUsers=1 Include_pip=1 PrependPath=1 Include_test=0
+Start-Process -NoNewWindow -Wait -FilePath C:\Windows\temp\python.exe -ArgumentList "/quiet InstallAllUsers=1 Include_tcltk=1 PrependPath=1 Include_test=0"
 
 Remove-Item C:\Windows\Temp\python.exe

@@ -1,0 +1,5 @@
+Build box with VirtualBox:
+> packer build -only=virtualbox-iso -var iso_url=./iso/en_windows_server_version_1909_updated_april_2020_x64_dvd_c2324f4e.iso -var iso_checksum=2fa3edeca639868f7111db9aff637166f6093f5eb9b35f9b4fb5c2ed4dd0ed67 windows_server_1909_docker.json
+
+Build qcow2 image with qemu:
+> packer build -only=qemu -except=vagrant --var virtio_win_iso=./iso/virtio-win-0.1.185.iso -var iso_url=./iso/en_windows_server_version_1909_updated_april_2020_x64_dvd_c2324f4e.iso -var iso_checksum=2fa3edeca639868f7111db9aff637166f6093f5eb9b35f9b4fb5c2ed4dd0ed67 windows_server_1909_docker.json
