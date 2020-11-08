@@ -167,6 +167,18 @@
       "type": "windows-restart"
     },
     {
+      "inline": [
+        "New-Item -ItemType Directory -Force -Path C:\\ProgramData\\Docker\\config",
+        "New-Item -ItemType Directory -Force -Path C:\\Users\\vagrant\\msvc15"
+      ],
+      "type": "powershell"
+    },
+    {
+      "source": "./scripts/docker/Dockerfile.msvc15",
+      "destination": "C:\\Users\\vagrant\\msvc15\\Dockerfile.msvc15",
+      "type": "file"
+    },
+    {
       "environment_vars": [
         "docker_images={{user `docker_images`}}",
         "docker_provider={{user `docker_provider`}}",
@@ -177,15 +189,12 @@
         "./scripts/docker/add-docker-group.ps1",
         "./scripts/docker/install-docker.ps1",
         "./scripts/docker/docker-pull.ps1",
+        "./scripts/docker/docker-build.ps1",
         "./scripts/docker/open-docker-insecure-port.ps1",
         "./scripts/docker/open-docker-swarm-ports.ps1",
         "./scripts/docker/remove-docker-key-json.ps1",
         "./scripts/docker/disable-windows-defender.ps1"
       ],
-      "type": "powershell"
-    },
-    {
-      "inline": ["New-Item -ItemType Directory -Force -Path C:\\ProgramData\\Docker\\config"],
       "type": "powershell"
     },
     {
