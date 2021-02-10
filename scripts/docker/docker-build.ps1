@@ -1,6 +1,0 @@
-Write-Host Building msvc15:local ...
-Set-Location -Path "C:\\Users\\vagrant\\msvc15"
-docker build -t msvc15:local -f Dockerfile.msvc15 .
-
-Write-Host Run container from msvc15:local ...
-docker run --rm msvc15:local cmd

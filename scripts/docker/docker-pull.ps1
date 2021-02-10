@@ -1,4 +1,4 @@
-$images = "mcr.microsoft.com/windows/servercore:1909"
+$images = ""
 if (Test-Path env:docker_images) {
   $images = $env:docker_images.split() 
 }
