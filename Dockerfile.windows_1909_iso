@@ -1,0 +1,2 @@
+FROM scratch
+ADD en_windows_server_version_1909_updated_april_2020_x64_dvd_c2324f4e.iso /disk/

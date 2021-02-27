@@ -1,5 +1,5 @@
 Build box with VirtualBox:
-> packer build -only=virtualbox-iso -var iso_url=./iso/en_windows_server_version_1909_updated_april_2020_x64_dvd_c2324f4e.iso -var iso_checksum=2fa3edeca639868f7111db9aff637166f6093f5eb9b35f9b4fb5c2ed4dd0ed67 windows_server_1909_docker.json
+> packer build -only=virtualbox-iso -var iso_url=./iso/en_windows_server_version_20h2_updated_feb_2021_x64_dvd_4bfbe45a.iso -var iso_checksum=8323A6EDC3F03911E328CD3F2953502B8F21E15056F3D870A6AB074E37DDE303 windows_server_20h2_docker.json
 
 Build qcow2 image with qemu:
-> packer build -only=qemu -except=vagrant --var virtio_win_iso=./iso/virtio-win-0.1.185.iso -var iso_url=./iso/en_windows_server_version_1909_updated_april_2020_x64_dvd_c2324f4e.iso -var iso_checksum=2fa3edeca639868f7111db9aff637166f6093f5eb9b35f9b4fb5c2ed4dd0ed67 windows_server_1909_docker.json
+> packer build -only=qemu -except=vagrant --var virtio_win_iso=./iso/virtio-win-0.1.190.iso -var iso_url=./iso/en_windows_server_version_20h2_updated_feb_2021_x64_dvd_4bfbe45a.iso -var iso_checksum=8323A6EDC3F03911E328CD3F2953502B8F21E15056F3D870A6AB074E37DDE303 windows_server_20h2_docker.json

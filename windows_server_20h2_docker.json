@@ -20,11 +20,11 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_url": "{{user `iso_url`}}",
       "memory": "{{user `memory`}}",
-      "output_directory": "windows_server_1909_docker",
+      "output_directory": "windows_server_20h2_docker",
       "qemuargs": [
         [
           "-drive",
-          "file=windows_server_1909_docker/{{ .Name }},if=virtio,cache=writeback,discard=ignore,format=qcow2,index=1"
+          "file=windows_server_20h2_docker/{{ .Name }},if=virtio,cache=writeback,discard=ignore,format=qcow2,index=1"
         ],
         [
           "-drive",
@@ -37,7 +37,7 @@
       ],
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "qemu",
-      "vm_name": "WindowsServer1909Docker",
+      "vm_name": "WindowsServer20H2Docker",
       "winrm_password": "vagrant",
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "vagrant"
@@ -66,7 +66,7 @@
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "switch_name": "{{user `hyperv_switchname`}}",
       "type": "hyperv-iso",
-      "vm_name": "WindowsServer1909Docker",
+      "vm_name": "WindowsServer20H2Docker",
       "winrm_password": "vagrant",
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "vagrant"
@@ -96,7 +96,7 @@
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "vmware-iso",
       "version": 14,
-      "vm_name": "WindowsServer1909Docker",
+      "vm_name": "WindowsServer20H2Docker",
       "vmx_data": {
         "RemoteDisplay.vnc.enabled": "false",
         "RemoteDisplay.vnc.port": "5900",
@@ -132,7 +132,7 @@
       "memory": "{{user `memory`}}",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "type": "virtualbox-iso",
-      "vm_name": "WindowsServer1909Docker",
+      "vm_name": "WindowsServer20H2Docker",
       "winrm_password": "vagrant",
       "winrm_timeout": "{{user `winrm_timeout`}}",
       "winrm_username": "vagrant"
@@ -141,9 +141,9 @@
   "post-processors": [
     {
       "keep_input_artifact": false,
-      "output": "windows_server_1909_{{.Provider}}.box",
+      "output": "windows_server_20h2_{{.Provider}}.box",
       "type": "vagrant",
-      "vagrantfile_template": "vagrantfile-windows_2019_core.template"
+      "vagrantfile_template": "vagrantfile-windows_20h2_core.template"
     }
   ],
   "provisioners": [
@@ -199,7 +199,7 @@
     }
   ],
   "variables": {
-    "autounattend": "./answer_files/server_1909/Autounattend.xml",
+    "autounattend": "./answer_files/server_20h2/Autounattend.xml",
     "disk_size": "61440",
     "disk_type_id": "1",
     "memory": "2048",
