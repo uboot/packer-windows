@@ -196,6 +196,13 @@
     {
       "restart_timeout": "{{user `restart_timeout`}}",
       "type": "windows-restart"
+    },
+    {
+      "scripts": [
+        "./scripts/install-python.ps1",
+        "./scripts/install-cloudinit.ps1"
+      ],
+      "type": "powershell"
     }
   ],
   "variables": {
