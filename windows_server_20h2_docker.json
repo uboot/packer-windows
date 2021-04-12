@@ -189,11 +189,6 @@
       "type": "powershell"
     },
     {
-      "source": "./scripts/docker/daemon.json",
-      "destination": "C:\\ProgramData\\Docker\\config\\daemon.json",
-      "type": "file"
-    },
-    {
       "restart_timeout": "{{user `restart_timeout`}}",
       "type": "windows-restart"
     },
